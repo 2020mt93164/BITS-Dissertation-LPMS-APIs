@@ -1,0 +1,435 @@
+{
+	"info": {
+		"_postman_id": "942d5edb-23a8-454c-9b08-e3f1b6ac89d8",
+		"name": "SmartCoupon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SmartBank",
+			"item": [
+				{
+					"name": "CreateCard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cardName\":\"K G 5\",\n    \"availablePoints\":3000\n}\n\n    // \"id\": 1,\n    // \"cardNo\": \"5773418225381785\",\n    // \"cardName\": \"K G\",\n    // \"expMonth\": 4,\n    // \"expYear\": 2027,\n    // \"cvv\": 248,\n    // \"availablePoints\": 6500\n\n    //     \"id\": 2,\n    // \"cardNo\": \"5626406023601954\",\n    // \"cardName\": \"K G\",\n    // \"expMonth\": 7,\n    // \"expYear\": 2028,\n    // \"cvv\": 138,\n    // \"availablePoints\": 6500",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/smartbank/cards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"smartbank",
+								"cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ValidateCard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cardNo\": \"5825464524781815\",\n    \"cardName\": \"C G\",\n    \"expMonth\": 10,\n    \"expYear\": 2031,\n    \"cvv\": 433\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/smartbank/cards/validations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"smartbank",
+								"cards",
+								"validations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RedeemCard",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "pointsToRedeem",
+								"value": "1000",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"cardNo\": \"5899422527181409\",\n        \"cardName\": \"First Last\",\n        \"expMonth\": 4,\n        \"expYear\": 2027,\n        \"cvv\": 332\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/smartbank/cards/redemptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"smartbank",
+								"cards",
+								"redemptions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cpn",
+			"item": [
+				{
+					"name": "CreateNewCard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cardName\":\"Ashwini Ghorpade\",\n    \"availablePoints\":120\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/cpn/cards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"cpn",
+								"cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"cardNo\": \"5899422527181409\",\n        \"cardName\": \"First Last\",\n        \"expMonth\": 4,\n        \"expYear\": 2027,\n        \"cvv\": 332\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/cpn/cards/validations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"cpn",
+								"cards",
+								"validations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RedeemCard",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "pointsToRedeem",
+								"value": "290",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"cardNo\": \"5880460421851676\",\n        \"cardName\": \"First Last\",\n        \"expMonth\": 10,\n        \"expYear\": 2023,\n        \"cvv\": 790\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/cpn/cards/redemptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"cpn",
+								"cards",
+								"redemptions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SmartCoupon",
+			"item": [
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "RegisterUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"test@gmail.com\",\n    \"password\": \"123456\",\n    \"username\":\"First Last\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/accounts/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"accounts",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AuthenticateUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"test@gmail.com\",\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/accounts/authentications",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"accounts",
+										"authentications"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UserCards",
+					"item": [
+						{
+							"name": "AddCard",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "email",
+										"value": "test@gmail.com",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cardNo\": \"5688436726841742\",\n    \"cardName\": \"Ashwini Ghorpade\",\n    \"expMonth\": 9,\n    \"expYear\": 2031,\n    \"cvv\": 724\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/cards",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cards"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ListCards",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/cards?email=test@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cards"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "test@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteCard",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/cards?id=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cards"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SmartCoupon",
+					"item": [
+						{
+							"name": "AddSmartCard",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "email",
+										"value": "test@gmail.com",
+										"type": "text"
+									},
+									{
+										"key": "pointsToRedeem",
+										"value": "50",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"cardIds\":[\"2\",\"3\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/smartcards",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"smartcards"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetSmartCards",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/smartcards?email=test@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"smartcards"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "test@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
